@@ -13,7 +13,7 @@ function initializeTheme() {
     
     // Function to update the theme
     function updateTheme(isDark) {
-        console.log('Updating theme to:', isDark ? 'dark' : 'light');
+        //console.log('Updating theme to:', isDark ? 'dark' : 'light');
         if (isDark) {
             html.classList.add('dark');
         } else {
@@ -37,7 +37,7 @@ function initializeTheme() {
     
     // Theme toggle click handler
     themeToggle.addEventListener('click', (e) => {
-        console.log('Theme toggle clicked');
+        //console.log('Theme toggle clicked');
         e.preventDefault();
         const isDark = !html.classList.contains('dark');
         updateTheme(isDark);
