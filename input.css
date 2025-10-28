@@ -1,1 +1,20 @@
 @import "tailwindcss";
+
+:root {
+    color-scheme: light;
+}
+
+html.dark {
+    color-scheme: light;
+}
+
+.dark body {
+    background-color: rgb(3 7 18);
+    color: rgb(209 213 219);
+}
+
+body {
+    background-color: white;
+    color: black;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
