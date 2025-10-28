@@ -1,145 +1,176 @@
 <!DOCTYPE html>
 <html lang="en" class="light">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thomas Johnson - Home</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-    }
-  </script>
-  <style>
-    .font-geist { font-family: 'Geist', sans-serif; }
-    .font-inter { font-family: 'Inter', sans-serif; }
-    .font-mono { font-family: 'Geist Mono', monospace; }
-    .font-spacegrotesk { font-family: 'Space Grotesk', monospace; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thomas Johnson - Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+    <style>
+        .font-geist {
+            font-family: 'Geist', sans-serif;
+        }
 
-    html {
-      scroll-behavior: smooth;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-    .nav-link {
-      opacity: 0.7;
-      transition: opacity 0.2s ease;
-    }
-    .nav-link:hover {
-      opacity: 1;
-    }
-    .hover-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.25rem;
-      color: #3b82f6;
-      text-decoration: none;
-    }
-    .hover-link:hover {
-      text-decoration: underline;
-    }
-    .skill-pill {
-      display: inline-block;
-      padding: 2px 8px;
-      background-color: #f3f4f6;
-      border-radius: 9999px;
-      font-size: 0.85rem;
-      margin-right: 6px;
-      margin-bottom: 6px;
-      border: 1px solid #d1d5db;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-    }
-    .dark .skill-pill {
-      background-color: #1f2937;
-      border-color: #374151;
-    }
-  </style>
+        .font-inter {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .font-mono {
+            font-family: 'Geist Mono', monospace;
+        }
+
+        .font-spacegrotesk {
+            font-family: 'Space Grotesk', monospace;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .nav-link {
+            opacity: 0.7;
+            transition: opacity 0.2s ease;
+        }
+
+        .nav-link:hover {
+            opacity: 1;
+        }
+
+        .hover-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            color: #3b82f6;
+            text-decoration: none;
+        }
+
+        .hover-link:hover {
+            text-decoration: underline;
+        }
+
+        .skill-pill {
+            display: inline-block;
+            padding: 2px 8px;
+            background-color: #f3f4f6;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            margin-right: 6px;
+            margin-bottom: 6px;
+            border: 1px solid #d1d5db;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        }
+
+        .dark .skill-pill {
+            background-color: #1f2937;
+            border-color: #374151;
+        }
+    </style>
 </head>
-<body class="bg-white dark:bg-gray-950 text-black dark:text-gray-300 font-geist transition-colors duration-300 text-base sm:text-[1.05rem] md:text-lg font-inter">
-  <!-- NAVBAR -->
-  <nav class="w-full border-b border-gray-300 dark:border-gray-700 py-4">
-    <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
-      <a href="index.html" class="text-base sm:text-xl md:text-4xl font-bold">🏔️</a>
-      <div class="flex gap-6 items-center text-base sm:text-lg">
-        <a href="index.html" class="nav-link">About</a>
-        <a href="experience.html" class="nav-link">Experience</a>
-        <a href="projects.html" class="nav-link">Projects</a>
-        <button id="themeToggle" class="w-6 h-6 flex items-center justify-center">
-          <i data-lucide="moon" class="dark:hidden"></i>
-          <i data-lucide="sun" class="hidden dark:block"></i>
-        </button>
-      </div>
-    </div>
-  </nav>
 
-  <div class="max-w-6xl mx-auto px-6">
-    <!-- Hero Section -->
-    <section class="my-20 grid md:grid-cols-2 gap-10 items-start">
-      <!-- Left column: text -->
-      <div>
-        <h1 class="text-4xl mb-4 font-bold">Thomas Johnson</h1>
-        <p class="text-base sm:text-lg md:text-xl font-normal mb-6">
-          breif description
-        </p>
-        <p class="text-base opacity-70">SPECIALIZE IN:</p>
-        <p class="mb-4">thing 1, thing 2, thing 3</p>
-        <p class="text-base opacity-70 mt-5">LANGUAGES:</p>
-        <p>C, C++, etc/p>
-        <a href="/assets/resume.pdf" download="resume.pdf" 
-          class="hover-link text-blue-500 underline underline-offset-4 hover:underline hover:decoration-wavy">
-          download my resume <i data-lucide="download"></i>
-        </a>
-        <p class="text-base opacity-70 mt-5">CONNECT WITH ME:</p>
-        <div class="flex flex-wrap gap-4">
-          <a href="https://github.com/tjohnson04" class="hover-link" target="_blank">GitHub <i data-lucide="arrow-up-right"></i></a>
-          <a href="https://www.linkedin.com/in/thomasjohnsonuva/" class="hover-link" target="_blank">LinkedIn <i data-lucide="arrow-up-right"></i></a>
-          <a href="mailto:thomasj07059@gmail.com" class="hover-link" target="_blank">Email <i data-lucide="arrow-up-right"></i></a>
+<body
+    class="bg-white dark:bg-gray-950 text-black dark:text-gray-300 font-geist transition-colors duration-300 text-base sm:text-[1.05rem] md:text-lg font-inter">
+    <!-- NAVBAR -->
+    <nav class="w-full border-b border-gray-300 dark:border-gray-700 py-4">
+        <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="text-base sm:text-xl md:text-4xl font-bold">🏔️</a>
+            <div class="flex gap-6 items-center text-base sm:text-lg">
+                <a href="index.html" class="nav-link">About</a>
+                <a href="experience.html" class="nav-link">Experience</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <button id="themeToggle" class="w-6 h-6 flex items-center justify-center">
+                    <i data-lucide="moon" class="dark:hidden"></i>
+                    <i data-lucide="sun" class="hidden dark:block"></i>
+                </button>
+            </div>
         </div>
-      </div>
+    </nav>
 
-      <!-- Right column: image -->
-      <div class="flex justify-center md:justify-end">
-        <img src="assets/headshot.jpg" alt="Thomas Johnson" class="w-64 h-64 object-cover rounded-full transition-transform hover:scale-105" />
-      </div>
+    <div class="max-w-6xl mx-auto px-6">
+        <!-- Hero Section -->
+        <section class="my-20 grid md:grid-cols-2 gap-10 items-start">
+            <!-- Left column: text -->
+            <div>
+                <h1 class="text-4xl mb-4 font-bold">Thomas Johnson</h1>
+                <p class="text-base sm:text-lg md:text-xl font-normal mb-6">
+                    breif description
+                </p>
+                <p class="text-base opacity-70">SPECIALIZE IN:</p>
+                <p class="mb-4">thing 1, thing 2, thing 3</p>
+                <p class="text-base opacity-70 mt-5">LANGUAGES:</p>
+                <p>C, C++, etc/p>
+                    <a href="/assets/resume.pdf" download="resume.pdf"
+                        class="hover-link text-blue-500 underline underline-offset-4 hover:underline hover:decoration-wavy">
+                        download my resume <i data-lucide="download"></i>
+                    </a>
+                <p class="text-base opacity-70 mt-5">CONNECT WITH ME:</p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="https://github.com/tjohnson04" class="hover-link" target="_blank">GitHub <i
+                            data-lucide="arrow-up-right"></i></a>
+                    <a href="https://www.linkedin.com/in/thomasjohnsonuva/" class="hover-link" target="_blank">LinkedIn
+                        <i data-lucide="arrow-up-right"></i></a>
+                    <a href="mailto:thomasj07059@gmail.com" class="hover-link" target="_blank">Email <i
+                            data-lucide="arrow-up-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Right column: image -->
+            <div class="flex justify-center md:justify-end">
+                <img src="assets/headshot.jpg" alt="Thomas Johnson"
+                    class="w-64 h-64 object-cover rounded-full transition-transform hover:scale-105" />
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="mb-20">
+            <h2 class="font-spacegrotesk text-5xl font-black mb-4">about</h2>
+            <p class="mb-6 leading-relaxed">
+                longer description
+            </p>
+        </section>
+    </div>
+
+    <section id="connect" class="mb-20 text-center">
+        <!-- Social Links -->
+        <div class="flex justify-center flex-wrap gap-6 text-lg">
+            <a href="https://github.com/tjohnson04" target="_blank" class="hover-link inline-flex items-center gap-2">
+                <i data-lucide="github" class="w-5 h-5"></i> GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/thomasjohnsonuva/" target="_blank"
+                class="hover-link inline-flex items-center gap-2">
+                <i data-lucide="linkedin" class="w-5 h-5"></i> LinkedIn
+            </a>
+            <a href="mailto:thomasj07059@gmail.com" target="_blank" class="hover-link inline-flex items-center gap-2">
+                <i data-lucide="mail" class="w-5 h-5"></i> Email
+        </div>
     </section>
 
-    <!-- About Section -->
-    <section class="mb-20">
-      <h2 class="font-spacegrotesk text-5xl font-black mb-4">about</h2>
-      <p class="mb-6 leading-relaxed">
-         longer description
-      </p>
-    </section>
-  </div>
+    <!-- Back to Top -->
+    <button id="backToTop"
+        class="fixed bottom-6 right-6 flex flex-col items-center justify-center p-3 rounded-full bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-blue-500 hover:text-white dark:hover:bg-blue-500 dark:hover:text-white transition-all shadow-lg"
+        aria-label="Back to top">
+        <i data-lucide="arrow-up-to-line" class="w-5 h-5"></i>
+    </button>
 
-  <section id="connect" class="mb-20 text-center">
-  <!-- Social Links -->
-  <div class="flex justify-center flex-wrap gap-6 text-lg">
-    <a href="https://github.com/tjohnson04" target="_blank" class="hover-link inline-flex items-center gap-2">
-      <i data-lucide="github" class="w-5 h-5"></i> GitHub
-    </a>
-    <a href="https://www.linkedin.com/in/thomasjohnsonuva/" target="_blank" class="hover-link inline-flex items-center gap-2">
-      <i data-lucide="linkedin" class="w-5 h-5"></i> LinkedIn
-    </a>
-    <a href="mailto:thomasj07059@gmail.com" target="_blank" class="hover-link inline-flex items-center gap-2">
-      <i data-lucide="mail" class="w-5 h-5"></i> Email
-  </div>
-</section>
 
-  <!-- Back to Top -->
-  <button id="backToTop"
-    class="fixed bottom-6 right-6 flex flex-col items-center justify-center p-3 rounded-full bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-blue-500 hover:text-white dark:hover:bg-blue-500 dark:hover:text-white transition-all shadow-lg"
-    aria-label="Back to top">
-    <i data-lucide="arrow-up-to-line" class="w-5 h-5"></i>
-  </button>
 
-    <footer class="border-t border-gray-300 dark:border-gray-700 text-center text-md text-gray-700 dark:text-gray-200 py-5 mt-20">
-  © 2025 Thomas Johnson
-</footer>
+    <script src="theme.js"></script>
 
-  <script src="theme.js"></script>
+    <footer
+        class="border-t border-gray-300 dark:border-gray-700 text-center text-md text-gray-700 dark:text-gray-200 py-5 mt-20">
+        © 2025 Thomas Johnson
+    </footer>
 </body>
+
 </html>

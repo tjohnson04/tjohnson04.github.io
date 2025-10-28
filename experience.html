@@ -1,184 +1,228 @@
 <!DOCTYPE html>
 <html lang="en" class="light">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thomas Johnson - Experience</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-    }
-  </script>
-  <style>
-    .font-geist { font-family: 'Geist', sans-serif; }
-    .font-inter { font-family: 'Inter', sans-serif; }
-    .font-mono { font-family: 'Geist Mono', monospace; }
-    .font-spacegrotesk { font-family: 'Space Grotesk', monospace; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thomas Johnson - Experience</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+    <style>
+        .font-geist {
+            font-family: 'Geist', sans-serif;
+        }
 
-    html {
-      scroll-behavior: smooth;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-    .nav-link {
-      opacity: 0.7;
-      transition: opacity 0.2s ease;
-    }
-    .nav-link:hover {
-      opacity: 1;
-    }
-    .hover-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.25rem;
-      color: #3b82f6;
-      text-decoration: none;
-    }
-    .hover-link:hover {
-      text-decoration: underline;
-    }
-    .skill-pill {
-      display: inline-block;
-      padding: 2px 8px;
-      background-color: #f3f4f6;
-      border-radius: 9999px;
-      font-size: 0.85rem;
-      margin-right: 6px;
-      margin-bottom: 6px;
-      border: 1px solid #d1d5db;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-    }
-    .dark .skill-pill {
-      background-color: #1f2937;
-      border-color: #374151;
-    }
-  </style>
+        .font-inter {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .font-mono {
+            font-family: 'Geist Mono', monospace;
+        }
+
+        .font-spacegrotesk {
+            font-family: 'Space Grotesk', monospace;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .nav-link {
+            opacity: 0.7;
+            transition: opacity 0.2s ease;
+        }
+
+        .nav-link:hover {
+            opacity: 1;
+        }
+
+        .hover-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            color: #3b82f6;
+            text-decoration: none;
+        }
+
+        .hover-link:hover {
+            text-decoration: underline;
+        }
+
+        .skill-pill {
+            display: inline-block;
+            padding: 2px 8px;
+            background-color: #f3f4f6;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            margin-right: 6px;
+            margin-bottom: 6px;
+            border: 1px solid #d1d5db;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        }
+
+        .dark .skill-pill {
+            background-color: #1f2937;
+            border-color: #374151;
+        }
+    </style>
 </head>
-<body class="bg-white dark:bg-gray-950 text-black dark:text-gray-300 font-geist transition-colors duration-300 text-base sm:text-[1.05rem] md:text-lg font-inter">
-  <!-- NAVBAR -->
-  <nav class="w-full border-b border-gray-300 dark:border-gray-700 py-4">
-    <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
-      <a href="index.html" class="text-base sm:text-xl md:text-4xl font-bold">🏔️</a>
-      <div class="flex gap-6 items-center text-base sm:text-lg">
-        <a href="index.html" class="nav-link">About</a>
-        <a href="experience.html" class="nav-link">Experience</a>
-        <a href="projects.html" class="nav-link">Projects</a>
-        <button id="themeToggle" class="w-6 h-6 flex items-center justify-center">
-          <i data-lucide="moon" class="dark:hidden"></i>
-          <i data-lucide="sun" class="hidden dark:block"></i>
-        </button>
-      </div>
-    </div>
-  </nav>
 
-  <div class="max-w-6xl mx-auto px-6">
-    <!-- Skills Section -->
-    <section class="my-20">
-      <h2 class="font-spacegrotesk text-5xl font-black mb-8">skills</h2>
-    
-      <!-- Responsive icons -->
-      <div class="flex flex-wrap gap-4 items-center mb-6">
-        <img src="assets/C.svg" alt="C" class="h-14 w-auto transition ease-in-out duration-150 hover:scale-125"/>
-        <img src="assets/CPP.svg" alt="C++" class="h-14 w-auto transition ease-in-out duration-150 hover:scale-125"/>
-        <img src="assets/Bash-Dark.svg" alt="Bash" class="h-14 w-auto transition ease-in-out duration-150 hover:scale-125"/>
-        <img src="assets/Linux-Dark.svg" alt="Linux" class="h-14 w-auto transition ease-in-out duration-150 hover:scale-125"/>
-        <img src="assets/VIM-Dark.svg" alt="Vim" class="h-14 w-auto transition ease-in-out duration-150 hover:scale-125"/>
-        <img src="assets/VSCode-Dark.svg" alt="VSCode" class="h-14 w-auto transition ease-in-out duration-150 hover:scale-125"/>
-        <img src="assets/Github-Dark.svg" alt="GitHub" class="h-14 w-auto transition ease-in-out duration-150 hover:scale-125"/>
-        <img src="assets/CMake-Dark.svg" alt="CMake" class="h-14 w-auto transition ease-in-out duration-150 hover:scale-125"/>
-        <img src="assets/Jenkins-Dark.svg" alt="Jenkins" class="h-14 w-auto transition ease-in-out duration-150 hover:scale-125"/>
-        <img src="assets/Ubuntu-Dark.svg" alt="Ubuntu" class="h-14 w-auto transition ease-in-out duration-150 hover:scale-125"/>
-        <img src="assets/Docker.svg" alt="Docker" class="h-14 w-auto transition ease-in-out duration-150 hover:scale-125"/>
-      </div>
-      
-      <!-- Skill pills -->
-      <div class="flex flex-wrap gap-2">
-        <span class="skill-pill">Embedded c</span>
-        <span class="skill-pill">RDK-B</span>
-        <span class="skill-pill">Yocto</span>
-        <span class="skill-pill">Linux</span>
-        <span class="skill-pill">gdb</span>
-        <span class="skill-pill">Valgrind</span>
-      </div>
-    </section>
-
-    <!-- Work Section -->
-    <section class="mb-20">
-      <h2 class="font-spacegrotesk text-5xl font-black mb-8">work</h2>
-      
-      <!-- Work Experience -->
-      <div class="mb-10 flex flex-col items-start gap-4">
-        <img src="assets/infy-blue.png" alt="Infosys logo" class="h-auto w-60 dark:hidden" />
-        <img src="assets/infy-white.png" alt="Infosys logo (dark)" class="h-auto w-60 hidden dark:block" />
-
-        <div>
-          <h3 class="font-mono text-base sm:text-lg md:text-xl text-gray-500 dark:text-gray-400">INFOSYS</h3>
-          <p class="font-inter text-lg sm:text-2xl md:text-3xl lg:text-4xl mb-2">Technology Analyst</p>
-          <p class="font-spacegrotesk text-base text-gray-500 dark:text-gray-400 mb-2">Trivandrum, Kerala</p>
-          <ul class="font-inter space-y-3 text-base sm:text-lg md:text-xl leading-relaxed">
-            <li class="flex items-start gap-2">
-              <i data-lucide="chevron-right" class="w-7 h-7 text-blue-500 dark:text-blue-400 mt-1"></i>
-              <span>Proven expertise in RDKB platform, developing and maintaining middleware CCSP components for RDK-B platform using Embedded C in Linux environment.</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <i data-lucide="chevron-right" class="w-7 h-7 text-blue-500 dark:text-blue-400 mt-1"></i>
-              <span>Worked on WebPA/WebConfig client development to enable secure and efficient cloud-based configuration management for RDK-B devices.</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <i data-lucide="chevron-right" class="w-7 h-7 text-blue-500 dark:text-blue-400 mt-1"></i>
-              <span>Strong analytical skills in troubleshooting complex issues - analyzing JIRA tickets, debugging root cause, and delivering high-quality solutions.</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <i data-lucide="chevron-right" class="w-7 h-7 text-blue-500 dark:text-blue-400 mt-1"></i>
-              <span>Maintained and enhanced core RDK-B components including Utopia, CcspPSM, and CcspLMLite by analyzing legacy code and implementing feature updates aligned with current coding standards.</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <i data-lucide="chevron-right" class="w-7 h-7 text-blue-500 dark:text-blue-400 mt-1"></i>
-              <span>Created Yocto layers (meta-*) and wrote bitbake recipe (.bb, .bbappend) files for building packages in RDK-B Yocto based build system.</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <i data-lucide="chevron-right" class="w-7 h-7 text-blue-500 dark:text-blue-400 mt-1"></i>
-              <span>Solid understanding of networking protocols such as DHCP, TCP, UDP, NAT, and key networking concepts relevant to broadband devices.</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <i data-lucide="chevron-right" class="w-7 h-7 text-blue-500 dark:text-blue-400 mt-1"></i>
-              <span>Strongly skilled in Linux shell scripting, command-line utilities and custom script development.</span>
-            </li>
-          </ul>
+<body
+    class="bg-white dark:bg-gray-950 text-black dark:text-gray-300 font-geist transition-colors duration-300 text-base sm:text-[1.05rem] md:text-lg font-inter">
+    <!-- NAVBAR -->
+    <nav class="w-full border-b border-gray-300 dark:border-gray-700 py-4">
+        <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="text-base sm:text-xl md:text-4xl font-bold">🏔️</a>
+            <div class="flex gap-6 items-center text-base sm:text-lg">
+                <a href="index.html" class="nav-link">About</a>
+                <a href="experience.html" class="nav-link">Experience</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <button id="themeToggle" class="w-6 h-6 flex items-center justify-center">
+                    <i data-lucide="moon" class="dark:hidden"></i>
+                    <i data-lucide="sun" class="hidden dark:block"></i>
+                </button>
+            </div>
         </div>
-      </div>
+    </nav>
+
+    <div class="max-w-6xl mx-auto px-6">
+        <!-- Skills Section -->
+        <section class="my-20">
+            <h2 class="font-spacegrotesk text-5xl font-black mb-8">skills</h2>
+
+            <!-- Responsive icons -->
+            <div class="flex flex-wrap gap-4 items-center mb-6">
+                <img src="assets/C.svg" alt="C"
+                    class="h-14 w-auto transition ease-in-out duration-150 hover:scale-125" />
+                <img src="assets/CPP.svg" alt="C++"
+                    class="h-14 w-auto transition ease-in-out duration-150 hover:scale-125" />
+                <img src="assets/Bash-Dark.svg" alt="Bash"
+                    class="h-14 w-auto transition ease-in-out duration-150 hover:scale-125" />
+                <img src="assets/Linux-Dark.svg" alt="Linux"
+                    class="h-14 w-auto transition ease-in-out duration-150 hover:scale-125" />
+                <img src="assets/VIM-Dark.svg" alt="Vim"
+                    class="h-14 w-auto transition ease-in-out duration-150 hover:scale-125" />
+                <img src="assets/VSCode-Dark.svg" alt="VSCode"
+                    class="h-14 w-auto transition ease-in-out duration-150 hover:scale-125" />
+                <img src="assets/Github-Dark.svg" alt="GitHub"
+                    class="h-14 w-auto transition ease-in-out duration-150 hover:scale-125" />
+                <img src="assets/CMake-Dark.svg" alt="CMake"
+                    class="h-14 w-auto transition ease-in-out duration-150 hover:scale-125" />
+                <img src="assets/Jenkins-Dark.svg" alt="Jenkins"
+                    class="h-14 w-auto transition ease-in-out duration-150 hover:scale-125" />
+                <img src="assets/Ubuntu-Dark.svg" alt="Ubuntu"
+                    class="h-14 w-auto transition ease-in-out duration-150 hover:scale-125" />
+                <img src="assets/Docker.svg" alt="Docker"
+                    class="h-14 w-auto transition ease-in-out duration-150 hover:scale-125" />
+            </div>
+
+            <!-- Skill pills -->
+            <div class="flex flex-wrap gap-2">
+                <span class="skill-pill">Embedded c</span>
+                <span class="skill-pill">RDK-B</span>
+                <span class="skill-pill">Yocto</span>
+                <span class="skill-pill">Linux</span>
+                <span class="skill-pill">gdb</span>
+                <span class="skill-pill">Valgrind</span>
+            </div>
+        </section>
+
+        <!-- Work Section -->
+        <section class="mb-20">
+            <h2 class="font-spacegrotesk text-5xl font-black mb-8">work</h2>
+
+            <!-- Work Experience -->
+            <div class="mb-10 flex flex-col items-start gap-4">
+                <img src="assets/infy-blue.png" alt="Infosys logo" class="h-auto w-60 dark:hidden" />
+                <img src="assets/infy-white.png" alt="Infosys logo (dark)" class="h-auto w-60 hidden dark:block" />
+
+                <div>
+                    <h3 class="font-mono text-base sm:text-lg md:text-xl text-gray-500 dark:text-gray-400">INFOSYS</h3>
+                    <p class="font-inter text-lg sm:text-2xl md:text-3xl lg:text-4xl mb-2">Technology Analyst</p>
+                    <p class="font-spacegrotesk text-base text-gray-500 dark:text-gray-400 mb-2">Trivandrum, Kerala</p>
+                    <ul class="font-inter space-y-3 text-base sm:text-lg md:text-xl leading-relaxed">
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="chevron-right" class="w-7 h-7 text-blue-500 dark:text-blue-400 mt-1"></i>
+                            <span>Proven expertise in RDKB platform, developing and maintaining middleware CCSP
+                                components for RDK-B platform using Embedded C in Linux environment.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="chevron-right" class="w-7 h-7 text-blue-500 dark:text-blue-400 mt-1"></i>
+                            <span>Worked on WebPA/WebConfig client development to enable secure and efficient
+                                cloud-based configuration management for RDK-B devices.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="chevron-right" class="w-7 h-7 text-blue-500 dark:text-blue-400 mt-1"></i>
+                            <span>Strong analytical skills in troubleshooting complex issues - analyzing JIRA tickets,
+                                debugging root cause, and delivering high-quality solutions.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="chevron-right" class="w-7 h-7 text-blue-500 dark:text-blue-400 mt-1"></i>
+                            <span>Maintained and enhanced core RDK-B components including Utopia, CcspPSM, and
+                                CcspLMLite by analyzing legacy code and implementing feature updates aligned with
+                                current coding standards.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="chevron-right" class="w-7 h-7 text-blue-500 dark:text-blue-400 mt-1"></i>
+                            <span>Created Yocto layers (meta-*) and wrote bitbake recipe (.bb, .bbappend) files for
+                                building packages in RDK-B Yocto based build system.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="chevron-right" class="w-7 h-7 text-blue-500 dark:text-blue-400 mt-1"></i>
+                            <span>Solid understanding of networking protocols such as DHCP, TCP, UDP, NAT, and key
+                                networking concepts relevant to broadband devices.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="chevron-right" class="w-7 h-7 text-blue-500 dark:text-blue-400 mt-1"></i>
+                            <span>Strongly skilled in Linux shell scripting, command-line utilities and custom script
+                                development.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section id="connect" class="mb-20 text-center">
+        <!-- Social Links -->
+        <div class="flex justify-center flex-wrap gap-6 text-lg">
+            <a href="https://github.com/tjohnson04" target="_blank" class="hover-link inline-flex items-center gap-2">
+                <i data-lucide="github" class="w-5 h-5"></i> GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/thomasjohnsonuva/" target="_blank"
+                class="hover-link inline-flex items-center gap-2">
+                <i data-lucide="linkedin" class="w-5 h-5"></i> LinkedIn
+            </a>
+            <a href="mailto:thomasj07059@gmail.com" target="_blank" class="hover-link inline-flex items-center gap-2">
+                <i data-lucide="mail" class="w-5 h-5"></i> Email
+        </div>
     </section>
-  </div>
 
-  <section id="connect" class="mb-20 text-center">
-  <!-- Social Links -->
-  <div class="flex justify-center flex-wrap gap-6 text-lg">
-    <a href="https://github.com/tjohnson04" target="_blank" class="hover-link inline-flex items-center gap-2">
-      <i data-lucide="github" class="w-5 h-5"></i> GitHub
-    </a>
-    <a href="https://www.linkedin.com/in/thomasjohnsonuva/" target="_blank" class="hover-link inline-flex items-center gap-2">
-      <i data-lucide="linkedin" class="w-5 h-5"></i> LinkedIn
-    </a>
-    <a href="mailto:thomasj07059@gmail.com" target="_blank" class="hover-link inline-flex items-center gap-2">
-      <i data-lucide="mail" class="w-5 h-5"></i> Email
-  </div>
-</section>
+    <!-- Back to Top -->
+    <button id="backToTop"
+        class="fixed bottom-6 right-6 flex flex-col items-center justify-center p-3 rounded-full bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-blue-500 hover:text-white dark:hover:bg-blue-500 dark:hover:text-white transition-all shadow-lg"
+        aria-label="Back to top">
+        <i data-lucide="arrow-up-to-line" class="w-5 h-5"></i>
+    </button>
 
-  <!-- Back to Top -->
-  <button id="backToTop"
-    class="fixed bottom-6 right-6 flex flex-col items-center justify-center p-3 rounded-full bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-blue-500 hover:text-white dark:hover:bg-blue-500 dark:hover:text-white transition-all shadow-lg"
-    aria-label="Back to top">
-    <i data-lucide="arrow-up-to-line" class="w-5 h-5"></i>
-  </button>
+    <footer
+        class="border-t border-gray-300 dark:border-gray-700 text-center text-md text-gray-700 dark:text-gray-200 py-5 mt-20">
+        © 2025 Thomas Johnson
+    </footer>
 
-    <footer class="border-t border-gray-300 dark:border-gray-700 text-center text-md text-gray-700 dark:text-gray-200 py-5 mt-20">
-  © 2025 Thomas Johnson
-</footer>
-
-  <script src="theme.js"></script>
+    <script src="theme.js"></script>
 </body>
+
 </html>
