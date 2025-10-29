@@ -1,7 +1,7 @@
 // Wait for DOM to be ready
 // Theme toggle functionality
 function initializeTheme() {
-    console.log('Initializing theme...');
+    //console.log('Initializing theme...');
     
     const themeToggle = document.getElementById('themeToggle');
     if (!themeToggle) {
