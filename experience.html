@@ -74,32 +74,40 @@
             border-color: #374151;
         }
 
-/* neutralize any leftover per-icon top margins (override tailwind mt-1) */
-li.flex > i[data-lucide],
-li.flex > svg[data-lucide] {
-  margin-top: 0 !important;
-}
+        /* neutralize any leftover per-icon top margins (override tailwind mt-1) */
+        li.flex>i[data-lucide],
+        li.flex>svg[data-lucide] {
+            margin-top: 0 !important;
+        }
 
-/* size + prevent shrinking on the generated svg element (lucide replaces <i> with <svg>) */
-li.flex > svg[data-lucide] {
-  width: 1.75rem !important;     /* same as w-7 */
-  height: 1.75rem !important;    /* same as h-7 */
-  flex-shrink: 0 !important;     /* don't shrink when text wraps */
-  display: inline-block !important;
-  vertical-align: top;           /* avoids baseline scaling differences */
-  align-self: flex-start;        /* keeps icon at top of the flex row */
-  box-sizing: content-box;
-  stroke-width: 2 !important;    /* consistent stroke */
-}
+        /* size + prevent shrinking on the generated svg element (lucide replaces <i> with <svg>) */
+        li.flex>svg[data-lucide] {
+            width: 1.75rem !important;
+            /* same as w-7 */
+            height: 1.75rem !important;
+            /* same as h-7 */
+            flex-shrink: 0 !important;
+            /* don't shrink when text wraps */
+            display: inline-block !important;
+            vertical-align: top;
+            /* avoids baseline scaling differences */
+            align-self: flex-start;
+            /* keeps icon at top of the flex row */
+            box-sizing: content-box;
+            stroke-width: 2 !important;
+            /* consistent stroke */
+        }
 
-/* ensure the <li> row puts the icon at the top when text wraps */
-li.flex {
-  align-items: flex-start; /* icon aligns with first text line for multi-line items */
-}
+        /* ensure the <li> row puts the icon at the top when text wraps */
+        li.flex {
+            align-items: flex-start;
+            /* icon aligns with first text line for multi-line items */
+        }
 
-/* if you want the icon vertically centered for single-line items, you can tweak with a small translate */
-li.flex > svg[data-lucide] { transform: translateY(0); }
-
+        /* if you want the icon vertically centered for single-line items, you can tweak with a small translate */
+        li.flex>svg[data-lucide] {
+            transform: translateY(0);
+        }
     </style>
 </head>
 
@@ -113,6 +121,7 @@ li.flex > svg[data-lucide] { transform: translateY(0); }
                 <a href="index.html" class="nav-link">About</a>
                 <a href="experience.html" class="nav-link">Resume</a>
                 <a href="projects.html" class="nav-link">Projects</a>
+                <a href="other.html" class="nav-link">Other</a>
                 <button id="themeToggle" class="w-6 h-6 flex items-center justify-center">
                     <i data-lucide="moon" class="dark:hidden"></i>
                     <i data-lucide="sun" class="hidden dark:block"></i>
@@ -125,28 +134,29 @@ li.flex > svg[data-lucide] { transform: translateY(0); }
         <!-- Work Section -->
         <section class="mb-20 mt-20">
             <!-- Education -->
-            <section class="mb-20 mt-20">
+            <section class="mb-15 mt-15">
                 <h2 class="font-spacegrotesk text-5xl font-black mb-8">education</h2>
                 <div class="mb-10 flex flex-col items-start gap-10">
                     <div>
-                        <h3 class="font-mono text-base sm:text-lg md:text-xl text-gray-500 dark:text-gray-400">
-                            UNIVERSITY OF VIRGINIA</h3>
-                        <p class="font-inter text-lg sm:text-2xl md:text-3xl lg:text-4xl mb-2">B.S. Computer Engineering
+                        <p class="font-inter text-lg sm:text-2xl md:text-3xl lg:text-3xl">UNIVERSITY OF VIRGINIA
                         </p>
+                        <h3 class="font-mono text-base sm:text-lg md:text-xl text-gray-500 dark:text-gray-400">
+                            B.S. Computer Engineering</h3>
+
                         <h3 class="font-mono text-base sm:text-md md:text-lg text-gray-500 dark:text-gray-400">
                             Engineering Business Minor, 3.5 GPA, Graduated with Distinction</h3>
                         <p class="font-spacegrotesk text-base text-gray-500 dark:text-gray-400 mb-2">Charlottesville, VA
+                            &nbsp;| &nbsp;August 2021 - May 2025
                         </p>
 
                     </div>
 
                     <div>
-                        <h3 class="font-mono text-base sm:text-lg md:text-xl text-gray-500 dark:text-gray-400">DELBARTON
-                            SCHOOL</h3>
-                        <p class="font-inter text-lg sm:text-2xl md:text-3xl lg:text-4xl mb-2"></p>
+                        <p class="font-inter text-lg sm:text-2xl md:text-3xl lg:text-3xl mb-2">Delbarton School</p>
                         <h3 class="font-mono text-base sm:text-md md:text-lg text-gray-500 dark:text-gray-400">
                             Headmaster's List, Highest Honors, First Team All-State Skiing</h3>
-                        <p class="font-spacegrotesk text-base text-gray-500 dark:text-gray-400 mb-2">Morristown, NJ</p>
+                        <p class="font-spacegrotesk text-base text-gray-500 dark:text-gray-400 mb-2">Morristown, NJ
+                            &nbsp;| &nbsp;August 2017 - June 2021</p>
 
                     </div>
 
@@ -154,20 +164,22 @@ li.flex > svg[data-lucide] { transform: translateY(0); }
             </section>
             <h2 class="font-spacegrotesk text-5xl font-black mb-8">work</h2>
             <!-- Work Experience -->
-            <div class="mb-10 flex flex-col items-start gap-10">
+            <div class="mb-15 flex flex-col items-start gap-10">
                 <div>
                     <h3 class="font-mono text-base sm:text-lg md:text-xl text-gray-500 dark:text-gray-400">UNIVERSITY OF
                         VIRGINIA</h3>
-                    <p class="font-inter text-lg sm:text-2xl md:text-3xl lg:text-4xl mb-2">Teaching Assistant</p>
+                    <p class="font-inter text-lg sm:text-2xl md:text-3xl lg:text-3xl mb-2">Teaching Assistant</p>
                     <p class="font-spacegrotesk text-base text-gray-500 dark:text-gray-400 mb-2">Charlottesville, VA</p>
                     <ul class="font-inter space-y-3 text-base sm:text-lg md:text-xl leading-relaxed">
                         <li class="flex items-start gap-2">
                             <i data-lucide="chevron-right" class="w-7 h-7 text-blue-500 dark:text-blue-400 mt-1"></i>
-                            <span>Assisted during in class workshops of at least 50 students and led office hours outside of class</span>
+                            <span>Assisted during in class workshops of at least 50 students and led office hours
+                                outside of class</span>
                         </li>
                         <li class="flex items-start gap-2">
                             <i data-lucide="chevron-right" class="w-7 h-7 text-blue-500 dark:text-blue-400 mt-1"></i>
-                            <span>Graded assignments and collaborated with professor to improve class' efficiency and effectiveness</span>
+                            <span>Graded assignments and collaborated with professor to improve class' efficiency and
+                                effectiveness</span>
                         </li>
                     </ul>
                 </div>
@@ -175,12 +187,13 @@ li.flex > svg[data-lucide] { transform: translateY(0); }
                 <div>
                     <h3 class="font-mono text-base sm:text-lg md:text-xl text-gray-500 dark:text-gray-400">JOHNSON &
                         JOHNSON</h3>
-                    <p class="font-inter text-lg sm:text-2xl md:text-3xl lg:text-4xl mb-2">Intern</p>
+                    <p class="font-inter text-lg sm:text-2xl md:text-3xl lg:text-3xl mb-2">Intern</p>
                     <p class="font-spacegrotesk text-base text-gray-500 dark:text-gray-400 mb-2">Raritan, NJ</p>
                     <ul class="font-inter space-y-3 text-base sm:text-lg md:text-xl leading-relaxed">
                         <li class="flex items-start gap-2">
                             <i data-lucide="chevron-right" class="w-7 h-7 text-blue-500 dark:text-blue-400"></i>
-                            <span>Optimized ECM's digital database for auditors to locate files through intra document search</span>
+                            <span>Optimized ECM's digital database for auditors to locate files through intra document
+                                search</span>
                         </li>
                         <li class="flex items-center gap-2">
                             <i data-lucide="chevron-right" class="w-7 h-7 text-blue-500 dark:text-blue-400"></i>
@@ -189,8 +202,9 @@ li.flex > svg[data-lucide] { transform: translateY(0); }
                         </li>
                         <li class="flex items-center gap-2">
                             <i data-lucide="chevron-right" class="w-7 h-7 text-blue-500 dark:text-blue-400"></i>
-                            <span>Developed a web portal with integrated automation and analytics through a user experience 
-                                focused strategy. Researched and developed a framework for finance training for global employees</span>
+                            <span>Developed a web portal with integrated automation and analytics through a user
+                                experience focused strategy. Researched and developed a framework for finance training
+                                for global employees</span>
                         </li>
                     </ul>
                 </div>
@@ -198,7 +212,7 @@ li.flex > svg[data-lucide] { transform: translateY(0); }
                 <div>
                     <h3 class="font-mono text-base sm:text-lg md:text-xl text-gray-500 dark:text-gray-400">UNIVERSITY OF
                         VIRGINIA</h3>
-                    <p class="font-inter text-lg sm:text-2xl md:text-3xl lg:text-4xl mb-2">Undergraduate Research
+                    <p class="font-inter text-lg sm:text-2xl md:text-3xl lg:text-3xl mb-2">Undergraduate Research
                         Assistant</p>
                     <p class="font-spacegrotesk text-base text-gray-500 dark:text-gray-400 mb-2">Charlottesville, VA</p>
                     <ul class="font-inter space-y-3 text-base sm:text-lg md:text-xl leading-relaxed">

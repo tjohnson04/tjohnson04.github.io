@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thomas Johnson - Leisure</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏔️</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet">
+    <link href="./output.css" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .font-geist {
+            font-family: 'Geist', sans-serif;
+        }
+
+        .font-inter {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .font-mono {
+            font-family: 'Geist Mono', monospace;
+        }
+
+        .font-spacegrotesk {
+            font-family: 'Space Grotesk', monospace;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .nav-link {
+            opacity: 0.7;
+            transition: opacity 0.2s ease;
+        }
+
+        .nav-link:hover {
+            opacity: 1;
+        }
+
+        .hover-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            color: #3b82f6;
+            text-decoration: none;
+        }
+
+        .hover-link:hover {
+            text-decoration: underline;
+        }
+
+        .photo-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+            width: 280px;
+            height: 280px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .photo-card:hover {
+            transform: scale(1.02);
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 12px;
+        }
+
+        .photo-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 0.75rem;
+            background: rgba(0, 0, 0, 0.75);
+            color: white;
+            font-size: 0.9rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: 0 0 12px 12px;
+        }
+
+        .photo-card:hover .photo-caption {
+            opacity: 1;
+        }
+
+        .photo-scroll {
+            display: grid;
+            grid-template-rows: repeat(2, auto);
+            grid-auto-flow: column;
+            gap: 1.5rem;
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding-bottom: 1rem;
+        }
+
+        .photo-scroll::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .photo-scroll::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .dark .photo-scroll::-webkit-scrollbar-track {
+            background: #1f2937;
+        }
+
+        .photo-scroll::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+
+        .photo-scroll::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .photo-card {
+            scroll-snap-align: start;
+        }
+
+        .books-container {
+            height: 600px;
+            overflow-y: auto;
+            padding-right: 1rem;
+        }
+
+        .books-container::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .books-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .dark .books-container::-webkit-scrollbar-track {
+            background: #1f2937;
+        }
+
+        .books-container::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+
+        .books-container::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .book-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .dark .book-card {
+            border-color: #374151;
+        }
+
+        .book-card:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .dark .book-card:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .star-rating {
+            display: inline-flex;
+            gap: 2px;
+        }
+
+        .star {
+            color: #fbbf24;
+        }
+
+        .star-empty {
+            color: #d1d5db;
+        }
+
+        .dark .star-empty {
+            color: #4b5563;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+
+        .modal-content img {
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-white dark:bg-gray-950 text-black dark:text-gray-300 font-geist transition-colors duration-300 text-base sm:text-[1.05rem] md:text-lg font-inter">
+    <!-- NAVBAR -->
+    <nav class="w-full border-b border-gray-300 dark:border-gray-700 py-4">
+        <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="text-base sm:text-xl md:text-4xl font-bold">🏔️</a>
+            <div class="flex gap-6 items-center text-base sm:text-lg">
+                <a href="index.html" class="nav-link">About</a>
+                <a href="experience.html" class="nav-link">Resume</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="other.html" class="nav-link">Other</a>
+                <button id="themeToggle" class="w-6 h-6 flex items-center justify-center">
+                    <i data-lucide="moon" class="dark:hidden"></i>
+                    <i data-lucide="sun" class="hidden dark:block"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-6xl mx-auto px-6">
+        <!-- Photography Section -->
+        <section class="mb-20 mt-20">
+            <h2 class="font-spacegrotesk text-5xl font-black mb-8">photography</h2>
+            
+            <div class="photo-scroll">
+                <!-- Photo 1 -->
+                <div class="photo-card" onclick="openModal('photo1')">
+                    <img src="/assets/gallery/marcy.jpeg" alt="Mountain landscape" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Morning light over the peaks</p>
+                    </div>
+                </div>
+                <!-- Photo 1 -->
+                <div class="photo-card" onclick="openModal('photo1')">
+                    <img src="/assets/gallery/marcy2.jpeg" alt="Mountain landscape" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Morning light over the peaks</p>
+                    </div>
+                </div>
+                <!-- Photo 1 -->
+                <div class="photo-card" onclick="openModal('photo1')">
+                    <img src="/assets/gallery/honolulu.jpeg" alt="Mountain landscape" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Morning light over the peaks</p>
+                    </div>
+                </div>
+                <!-- Photo 1 -->
+                <div class="photo-card" onclick="openModal('photo1')">
+                    <img src="/assets/gallery/monticello.jpeg" alt="Mountain landscape" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Morning light over the peaks</p>
+                    </div>
+                </div>
+                <!-- Photo 1 -->
+                <div class="photo-card" onclick="openModal('photo1')">
+                    <img src="/assets/gallery/rotunda.jpeg" alt="Mountain landscape" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Morning light over the peaks</p>
+                    </div>
+                </div>
+                <!-- Photo 1 -->
+                <div class="photo-card" onclick="openModal('photo1')">
+                    <img src="/assets/gallery/morven_house.jpeg" alt="Mountain landscape" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Morning light over the peaks</p>
+                    </div>
+                </div>
+                <!-- Photo 1 -->
+                <div class="photo-card" onclick="openModal('photo1')">
+                    <img src="/assets/gallery/morven_trees.jpeg" alt="Mountain landscape" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Morning light over the peaks</p>
+                    </div>
+                </div>
+                <!-- Photo 1 -->
+                <div class="photo-card" onclick="openModal('photo1')">
+                    <img src="/assets/gallery/bachelor_gs.jpeg" alt="Mountain landscape" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Morning light over the peaks</p>
+                    </div>
+                </div>
+                <!-- Photo 1 -->
+                <div class="photo-card" onclick="openModal('photo1')">
+                    <img src="/assets/gallery/snow.jpeg" alt="Mountain landscape" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Morning light over the peaks</p>
+                    </div>
+                </div>
+                <!-- Photo 1 -->
+                <div class="photo-card" onclick="openModal('photo1')">
+                    <img src="/assets/gallery/bachelor.jpeg" alt="Mountain landscape" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Morning light over the peaks</p>
+                    </div>
+                </div>
+                <!-- Photo 1 -->
+                <div class="photo-card" onclick="openModal('photo1')">
+                    <img src="/assets/gallery/humpback.jpeg" alt="Mountain landscape" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Morning light over the peaks</p>
+                    </div>
+                </div>
+                <!-- Photo 1 -->
+                <div class="photo-card" onclick="openModal('photo1')">
+                    <img src="/assets/gallery/new_river.jpeg" alt="Mountain landscape" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Morning light over the peaks</p>
+                    </div>
+                </div>
+                <!-- Photo 1 -->
+                <div class="photo-card" onclick="openModal('photo1')">
+                    <img src="/assets/gallery/eiffel.jpeg" alt="Eiffel Tower" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Morning light over the peaks</p>
+                    </div>
+                </div>
+                <!-- Photo 1 -->
+                <div class="photo-card" onclick="openModal('photo1')">
+                    <img src="/assets/gallery/stuttgart_library.jpeg" alt="Mountain landscape" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Morning light over the peaks</p>
+                    </div>
+                </div>
+                <!-- Photo 1 -->
+                <div class="photo-card" onclick="openModal('photo1')">
+                    <img src="/assets/gallery/stuttgart_green.jpeg" alt="Mountain landscape" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Morning light over the peaks</p>
+                    </div>
+                </div>
+                <!-- Photo 1 -->
+                <div class="photo-card" onclick="openModal('photo1')">
+                    <img src="/assets/gallery/stuttgart_crevice.jpeg" alt="Mountain landscape" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Morning light over the peaks</p>
+                    </div>
+                </div>
+                <!-- Photo 1 -->
+                <div class="photo-card" onclick="openModal('photo1')">
+                    <img src="/assets/gallery/stuttgart_austria.jpeg" alt="Mountain landscape" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Morning light over the peaks</p>
+                    </div>
+                </div>
+                <!-- Photo 1 -->
+                <div class="photo-card" onclick="openModal('photo1')">
+                    <img src="/assets/gallery/senna.jpeg" alt="Mountain landscape" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Morning light over the peaks</p>
+                    </div>
+                </div>
+                <!-- Photo 1 -->
+                <div class="photo-card" onclick="openModal('photo1')">
+                    <img src="/assets/gallery/louvre.jpeg" alt="Mountain landscape" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Morning light over the peaks</p>
+                    </div>
+                </div>
+                <!-- Photo 1 -->
+                <div class="photo-card" onclick="openModal('photo1')">
+                    <img src="/assets/gallery/louvre_statue.jpeg" alt="Mountain landscape" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Morning light over the peaks</p>
+                    </div>
+                </div>
+                <!-- Photo 1 -->
+                <div class="photo-card" onclick="openModal('photo1')">
+                    <img src="/assets/gallery/paris.jpeg" alt="Mountain landscape" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Morning light over the peaks</p>
+                    </div>
+                </div>
+                <!-- Photo 1 -->
+                <div class="photo-card" onclick="openModal('photo1')">
+                    <img src="/assets/gallery/austria_fog.jpeg" alt="Mountain landscape" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Morning light over the peaks</p>
+                    </div>
+                </div>
+                <!-- Photo 1 -->
+                <div class="photo-card" onclick="openModal('photo1')">
+                    <img src="/assets/gallery/austria_dark.jpeg" alt="Mountain landscape" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Morning light over the peaks</p>
+                    </div>
+                </div>
+                <!-- Photo 1 -->
+                <div class="photo-card" onclick="openModal('photo1')">
+                    <img src="/assets/gallery/mammoth.jpeg" alt="Mountain landscape" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Morning light over the peaks</p>
+                    </div>
+                </div>
+                <!-- Photo 1 -->
+                <div class="photo-card" onclick="openModal('photo1')">
+                    <img src="/assets/gallery/beech.jpeg" alt="Mountain landscape" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Morning light over the peaks</p>
+                    </div>
+                </div>
+                <!-- Photo 1 -->
+                <div class="photo-card" onclick="openModal('photo1')">
+                    <img src="/assets/gallery/yak.jpeg" alt="Mountain landscape" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Morning light over the peaks</p>
+                    </div>
+                </div>
+                <!-- Photo 1 -->
+                <div class="photo-card" onclick="openModal('photo1')">
+                    <img src="/assets/gallery/sunday.jpeg" alt="Mountain landscape" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Morning light over the peaks</p>
+                    </div>
+                </div>
+                <!-- Photo 1 -->
+                <div class="photo-card" onclick="openModal('photo1')">
+                    <img src="/assets/gallery/barn.jpeg" alt="Mountain landscape" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Morning light over the peaks</p>
+                    </div>
+                </div>
+                <!-- Photo 1 -->
+                <div class="photo-card" onclick="openModal('photo1')">
+                    <img src="/assets/gallery/peru_starbucks.jpeg" alt="Mountain landscape" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Morning light over the peaks</p>
+                    </div>
+                </div>
+                <!-- Photo 1 -->
+                <div class="photo-card" onclick="openModal('photo1')">
+                    <img src="/assets/gallery/peru_mountain.jpeg" alt="Mountain landscape" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Morning light over the peaks</p>
+                    </div>
+                </div>
+                
+                <!-- Photo 2 -->
+                <div class="photo-card" onclick="openModal('photo2')">
+                    <img src="/assets/gallery/peru_path.jpeg" alt="Mountain sunset" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Golden hour in the mountains</p>
+                    </div>
+                </div>
+                
+                <!-- Photo 3 -->
+                <div class="photo-card" onclick="openModal('photo3')">
+                    <img src="/assets/gallery/peru_horses_me.jpeg" alt="Mountain peaks" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Above the clouds</p>
+                    </div>
+                </div>
+                
+                <!-- Photo 4 -->
+                <div class="photo-card" onclick="openModal('photo4')">
+                    <img src="/assets/gallery/peru_blue.jpeg" alt="Mountain valley" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Valley reflections at dusk</p>
+                    </div>
+                </div>
+                
+                <!-- Photo 5 -->
+                <div class="photo-card" onclick="openModal('photo5')">
+                    <img src="/assets/gallery/peru_alpaca.jpeg" alt="Alpine view" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Alpine serenity</p>
+                    </div>
+                </div>
+                <!-- Photo 1 -->
+                <div class="photo-card" onclick="openModal('photo1')">
+                    <img src="/assets/gallery/cuzco.jpeg" alt="Mountain landscape" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Morning light over the peaks</p>
+                    </div>
+                </div>
+                <!-- Photo 6 -->
+                <div class="photo-card" onclick="openModal('photo6')">
+                    <img src="/assets/gallery/smith.jpeg" alt="Mountain ridge" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Ridge line wandering</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Books Section -->
+        <section class="mb-20">
+            <h2 class="font-spacegrotesk text-5xl font-black mb-8">books</h2>
+            
+            <div class="books-container space-y-6">
+                <!-- Book 1 -->
+                <div class="book-card">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-inter text-xl sm:text-2xl md:text-3xl font-semibold">The Pragmatic Programmer</h3>
+                        <div class="flex flex-col items-end gap-1">
+                            <div class="star-rating">
+                                <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
+                            </div>
+                            <p class="font-mono text-xs text-gray-400 dark:text-gray-500">January 2024</p>
+                        </div>
+                    </div>
+                    <p class="font-mono text-sm text-gray-500 dark:text-gray-400 mb-2">Andrew Hunt & David Thomas</p>
+                    <p class="text-base">Essential reading for any software developer. Timeless advice on crafting better code and becoming a more effective programmer.</p>
+                </div>
+
+                <!-- Book 2 -->
+                <div class="book-card">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-inter text-xl sm:text-2xl md:text-3xl font-semibold">Thinking, Fast and Slow</h3>
+                        <div class="flex flex-col items-end gap-1">
+                            <div class="star-rating">
+                                <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="star-empty w-5 h-5 fill-current"></i>
+                            </div>
+                            <p class="font-mono text-xs text-gray-400 dark:text-gray-500">March 2024</p>
+                        </div>
+                    </div>
+                    <p class="font-mono text-sm text-gray-500 dark:text-gray-400 mb-2">Daniel Kahneman</p>
+                    <p class="text-base">Fascinating exploration of human decision-making and cognitive biases. Changed how I think about thinking.</p>
+                </div>
+
+                <!-- Book 3 -->
+                <div class="book-card">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-inter text-xl sm:text-2xl md:text-3xl font-semibold">Dune</h3>
+                        <div class="flex flex-col items-end gap-1">
+                            <div class="star-rating">
+                                <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
+                            </div>
+                            <p class="font-mono text-xs text-gray-400 dark:text-gray-500">June 2024</p>
+                        </div>
+                    </div>
+                    <p class="font-mono text-sm text-gray-500 dark:text-gray-400 mb-2">Frank Herbert</p>
+                    <p class="text-base">Epic sci-fi masterpiece. Intricate world-building and complex themes that stay with you long after reading.</p>
+                </div>
+
+                <!-- Book 4 -->
+                <div class="book-card">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-inter text-xl sm:text-2xl md:text-3xl font-semibold">Clean Code</h3>
+                        <div class="flex flex-col items-end gap-1">
+                            <div class="star-rating">
+                                <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="star-empty w-5 h-5 fill-current"></i>
+                            </div>
+                            <p class="font-mono text-xs text-gray-400 dark:text-gray-500">August 2024</p>
+                        </div>
+                    </div>
+                    <p class="font-mono text-sm text-gray-500 dark:text-gray-400 mb-2">Robert C. Martin</p>
+                    <p class="text-base">Great principles for writing maintainable code. Some examples feel dated but the core concepts are invaluable.</p>
+                </div>
+
+                <!-- Book 5 -->
+                <div class="book-card">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-inter text-xl sm:text-2xl md:text-3xl font-semibold">Atomic Habits</h3>
+                        <div class="flex flex-col items-end gap-1">
+                            <div class="star-rating">
+                                <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
+                            </div>
+                            <p class="font-mono text-xs text-gray-400 dark:text-gray-500">October 2024</p>
+                        </div>
+                    </div>
+                    <p class="font-mono text-sm text-gray-500 dark:text-gray-400 mb-2">James Clear</p>
+                    <p class="text-base">Practical framework for building good habits and breaking bad ones. Highly actionable and well-researched.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Modal for full-size images -->
+    <div id="photoModal" class="modal" onclick="closeModal()">
+        <button class="close-modal" onclick="closeModal()">
+            <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <img id="modalImage" src="" alt="Full size photo" />
+        </div>
+    </div>
+
+    <!-- Social Links -->
+    <section id="connect" class="mb-10 text-center">
+        <div class="flex justify-center flex-wrap gap-6 text-lg">
+            <a href="https://github.com/tjohnson04" target="_blank" class="hover-link inline-flex items-center gap-2">
+                <i data-lucide="github" class="w-5 h-5"></i> GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/thomasjohnsonuva/" target="_blank"
+                class="hover-link inline-flex items-center gap-2">
+                <i data-lucide="linkedin" class="w-5 h-5"></i> LinkedIn
+            </a>
+            <a href="mailto:thomasj07059@gmail.com" target="_blank" class="hover-link inline-flex items-center gap-2">
+                <i data-lucide="mail" class="w-5 h-5"></i> Email
+            </a>
+        </div>
+    </section>
+
+    <!-- Back to Top -->
+    <button id="backToTop"
+        class="fixed bottom-6 right-6 flex flex-col items-center justify-center p-3 rounded-full bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-blue-500 hover:text-white dark:hover:bg-blue-500 dark:hover:text-white transition-all shadow-lg"
+        aria-label="Back to top">
+        <i data-lucide="arrow-up-to-line" class="w-5 h-5"></i>
+    </button>
+
+    <footer class="border-t border-gray-300 dark:border-gray-700 text-center text-sm py-5 mt-10">
+        <span style="color: #374151" class="dark:text-gray-200">© 2025 by Thomas Johnson</span>
+    </footer>
+
+    <script src="theme.js"></script>
+    <script>
+        function openModal(photoId) {
+            const modal = document.getElementById('photoModal');
+            const modalImage = document.getElementById('modalImage');
+            const photoCard = event.target.closest('.photo-card');
+            const img = photoCard.querySelector('img');
+            
+            modalImage.src = img.src;
+            modal.classList.add('active');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('photoModal');
+            modal.classList.remove('active');
+        }
+
+        // Close modal on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+
+</html>
