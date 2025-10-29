@@ -62,7 +62,7 @@
             overflow: hidden;
             border-radius: 12px;
             cursor: pointer;
-            transition: transform 0.3s ease;
+            transition: transform 0.2s ease;
             flex-shrink: 0;
             width: 280px;
             height: 280px;
@@ -92,7 +92,7 @@
             color: white;
             font-size: 0.9rem;
             opacity: 0;
-            transition: opacity 0.3s ease;
+            transition: opacity 0.2s ease;
             border-radius: 0 0 12px 12px;
         }
 
@@ -108,28 +108,15 @@
             overflow-x: auto;
             overflow-y: hidden;
             padding-bottom: 1rem;
+            scrollbar-width: none;
+            /* Firefox */
+            -ms-overflow-style: none;
+            /* IE and Edge */
         }
 
+        /* Hide scrollbar for Chrome, Safari and Opera */
         .photo-scroll::-webkit-scrollbar {
-            height: 8px;
-        }
-
-        .photo-scroll::-webkit-scrollbar-track {
-            background: #f1f1f1;
-            border-radius: 10px;
-        }
-
-        .dark .photo-scroll::-webkit-scrollbar-track {
-            background: #1f2937;
-        }
-
-        .photo-scroll::-webkit-scrollbar-thumb {
-            background: #888;
-            border-radius: 10px;
-        }
-
-        .photo-scroll::-webkit-scrollbar-thumb:hover {
-            background: #555;
+            display: none;
         }
 
         .photo-card {
@@ -270,262 +257,206 @@
         <!-- Photography Section -->
         <section class="mb-20 mt-20">
             <h2 class="font-spacegrotesk text-5xl font-black mb-8">photography</h2>
-            
+
             <div class="photo-scroll">
-                <!-- Photo 1 -->
-                <div class="photo-card" onclick="openModal('photo1')">
-                    <img src="/assets/gallery/marcy.jpeg" alt="Mountain landscape" />
-                    <div class="photo-caption">
-                        <p class="font-inter">Morning light over the peaks</p>
-                    </div>
-                </div>
-                <!-- Photo 1 -->
-                <div class="photo-card" onclick="openModal('photo1')">
-                    <img src="/assets/gallery/marcy2.jpeg" alt="Mountain landscape" />
-                    <div class="photo-caption">
-                        <p class="font-inter">Morning light over the peaks</p>
-                    </div>
-                </div>
-                <!-- Photo 1 -->
-                <div class="photo-card" onclick="openModal('photo1')">
-                    <img src="/assets/gallery/honolulu.jpeg" alt="Mountain landscape" />
-                    <div class="photo-caption">
-                        <p class="font-inter">Morning light over the peaks</p>
-                    </div>
-                </div>
-                <!-- Photo 1 -->
-                <div class="photo-card" onclick="openModal('photo1')">
-                    <img src="/assets/gallery/monticello.jpeg" alt="Mountain landscape" />
-                    <div class="photo-caption">
-                        <p class="font-inter">Morning light over the peaks</p>
-                    </div>
-                </div>
-                <!-- Photo 1 -->
-                <div class="photo-card" onclick="openModal('photo1')">
-                    <img src="/assets/gallery/rotunda.jpeg" alt="Mountain landscape" />
-                    <div class="photo-caption">
-                        <p class="font-inter">Morning light over the peaks</p>
-                    </div>
-                </div>
-                <!-- Photo 1 -->
-                <div class="photo-card" onclick="openModal('photo1')">
-                    <img src="/assets/gallery/morven_house.jpeg" alt="Mountain landscape" />
-                    <div class="photo-caption">
-                        <p class="font-inter">Morning light over the peaks</p>
-                    </div>
-                </div>
-                <!-- Photo 1 -->
-                <div class="photo-card" onclick="openModal('photo1')">
-                    <img src="/assets/gallery/morven_trees.jpeg" alt="Mountain landscape" />
-                    <div class="photo-caption">
-                        <p class="font-inter">Morning light over the peaks</p>
-                    </div>
-                </div>
-                <!-- Photo 1 -->
-                <div class="photo-card" onclick="openModal('photo1')">
-                    <img src="/assets/gallery/bachelor_gs.jpeg" alt="Mountain landscape" />
-                    <div class="photo-caption">
-                        <p class="font-inter">Morning light over the peaks</p>
-                    </div>
-                </div>
-                <!-- Photo 1 -->
-                <div class="photo-card" onclick="openModal('photo1')">
-                    <img src="/assets/gallery/snow.jpeg" alt="Mountain landscape" />
-                    <div class="photo-caption">
-                        <p class="font-inter">Morning light over the peaks</p>
-                    </div>
-                </div>
-                <!-- Photo 1 -->
-                <div class="photo-card" onclick="openModal('photo1')">
-                    <img src="/assets/gallery/bachelor.jpeg" alt="Mountain landscape" />
-                    <div class="photo-caption">
-                        <p class="font-inter">Morning light over the peaks</p>
-                    </div>
-                </div>
-                <!-- Photo 1 -->
-                <div class="photo-card" onclick="openModal('photo1')">
-                    <img src="/assets/gallery/humpback.jpeg" alt="Mountain landscape" />
-                    <div class="photo-caption">
-                        <p class="font-inter">Morning light over the peaks</p>
-                    </div>
-                </div>
-                <!-- Photo 1 -->
-                <div class="photo-card" onclick="openModal('photo1')">
-                    <img src="/assets/gallery/new_river.jpeg" alt="Mountain landscape" />
-                    <div class="photo-caption">
-                        <p class="font-inter">Morning light over the peaks</p>
-                    </div>
-                </div>
-                <!-- Photo 1 -->
-                <div class="photo-card" onclick="openModal('photo1')">
-                    <img src="/assets/gallery/eiffel.jpeg" alt="Eiffel Tower" />
-                    <div class="photo-caption">
-                        <p class="font-inter">Morning light over the peaks</p>
-                    </div>
-                </div>
-                <!-- Photo 1 -->
-                <div class="photo-card" onclick="openModal('photo1')">
-                    <img src="/assets/gallery/stuttgart_library.jpeg" alt="Mountain landscape" />
-                    <div class="photo-caption">
-                        <p class="font-inter">Morning light over the peaks</p>
-                    </div>
-                </div>
-                <!-- Photo 1 -->
-                <div class="photo-card" onclick="openModal('photo1')">
-                    <img src="/assets/gallery/stuttgart_green.jpeg" alt="Mountain landscape" />
-                    <div class="photo-caption">
-                        <p class="font-inter">Morning light over the peaks</p>
-                    </div>
-                </div>
-                <!-- Photo 1 -->
-                <div class="photo-card" onclick="openModal('photo1')">
-                    <img src="/assets/gallery/stuttgart_crevice.jpeg" alt="Mountain landscape" />
-                    <div class="photo-caption">
-                        <p class="font-inter">Morning light over the peaks</p>
-                    </div>
-                </div>
-                <!-- Photo 1 -->
-                <div class="photo-card" onclick="openModal('photo1')">
-                    <img src="/assets/gallery/stuttgart_austria.jpeg" alt="Mountain landscape" />
-                    <div class="photo-caption">
-                        <p class="font-inter">Morning light over the peaks</p>
-                    </div>
-                </div>
-                <!-- Photo 1 -->
-                <div class="photo-card" onclick="openModal('photo1')">
-                    <img src="/assets/gallery/senna.jpeg" alt="Mountain landscape" />
-                    <div class="photo-caption">
-                        <p class="font-inter">Morning light over the peaks</p>
-                    </div>
-                </div>
-                <!-- Photo 1 -->
-                <div class="photo-card" onclick="openModal('photo1')">
-                    <img src="/assets/gallery/louvre.jpeg" alt="Mountain landscape" />
-                    <div class="photo-caption">
-                        <p class="font-inter">Morning light over the peaks</p>
-                    </div>
-                </div>
-                <!-- Photo 1 -->
-                <div class="photo-card" onclick="openModal('photo1')">
-                    <img src="/assets/gallery/louvre_statue.jpeg" alt="Mountain landscape" />
-                    <div class="photo-caption">
-                        <p class="font-inter">Morning light over the peaks</p>
-                    </div>
-                </div>
-                <!-- Photo 1 -->
-                <div class="photo-card" onclick="openModal('photo1')">
-                    <img src="/assets/gallery/paris.jpeg" alt="Mountain landscape" />
-                    <div class="photo-caption">
-                        <p class="font-inter">Morning light over the peaks</p>
-                    </div>
-                </div>
-                <!-- Photo 1 -->
-                <div class="photo-card" onclick="openModal('photo1')">
-                    <img src="/assets/gallery/austria_fog.jpeg" alt="Mountain landscape" />
-                    <div class="photo-caption">
-                        <p class="font-inter">Morning light over the peaks</p>
-                    </div>
-                </div>
-                <!-- Photo 1 -->
-                <div class="photo-card" onclick="openModal('photo1')">
-                    <img src="/assets/gallery/austria_dark.jpeg" alt="Mountain landscape" />
-                    <div class="photo-caption">
-                        <p class="font-inter">Morning light over the peaks</p>
-                    </div>
-                </div>
-                <!-- Photo 1 -->
-                <div class="photo-card" onclick="openModal('photo1')">
-                    <img src="/assets/gallery/mammoth.jpeg" alt="Mountain landscape" />
-                    <div class="photo-caption">
-                        <p class="font-inter">Morning light over the peaks</p>
-                    </div>
-                </div>
-                <!-- Photo 1 -->
-                <div class="photo-card" onclick="openModal('photo1')">
-                    <img src="/assets/gallery/beech.jpeg" alt="Mountain landscape" />
-                    <div class="photo-caption">
-                        <p class="font-inter">Morning light over the peaks</p>
-                    </div>
-                </div>
-                <!-- Photo 1 -->
-                <div class="photo-card" onclick="openModal('photo1')">
-                    <img src="/assets/gallery/yak.jpeg" alt="Mountain landscape" />
-                    <div class="photo-caption">
-                        <p class="font-inter">Morning light over the peaks</p>
-                    </div>
-                </div>
-                <!-- Photo 1 -->
-                <div class="photo-card" onclick="openModal('photo1')">
-                    <img src="/assets/gallery/sunday.jpeg" alt="Mountain landscape" />
-                    <div class="photo-caption">
-                        <p class="font-inter">Morning light over the peaks</p>
-                    </div>
-                </div>
-                <!-- Photo 1 -->
-                <div class="photo-card" onclick="openModal('photo1')">
-                    <img src="/assets/gallery/barn.jpeg" alt="Mountain landscape" />
-                    <div class="photo-caption">
-                        <p class="font-inter">Morning light over the peaks</p>
-                    </div>
-                </div>
-                <!-- Photo 1 -->
-                <div class="photo-card" onclick="openModal('photo1')">
-                    <img src="/assets/gallery/peru_starbucks.jpeg" alt="Mountain landscape" />
-                    <div class="photo-caption">
-                        <p class="font-inter">Morning light over the peaks</p>
-                    </div>
-                </div>
-                <!-- Photo 1 -->
-                <div class="photo-card" onclick="openModal('photo1')">
-                    <img src="/assets/gallery/peru_mountain.jpeg" alt="Mountain landscape" />
-                    <div class="photo-caption">
-                        <p class="font-inter">Morning light over the peaks</p>
-                    </div>
-                </div>
-                
+
                 <!-- Photo 2 -->
                 <div class="photo-card" onclick="openModal('photo2')">
-                    <img src="/assets/gallery/peru_path.jpeg" alt="Mountain sunset" />
+                    <img src="/assets/gallery/marcy2.jpeg" alt="Mountain landscape" />
                     <div class="photo-caption">
-                        <p class="font-inter">Golden hour in the mountains</p>
+                        <p class="font-inter">Mt. Marcy, New York</p>
                     </div>
                 </div>
-                
                 <!-- Photo 3 -->
                 <div class="photo-card" onclick="openModal('photo3')">
-                    <img src="/assets/gallery/peru_horses_me.jpeg" alt="Mountain peaks" />
+                    <img src="/assets/gallery/honolulu.jpeg" alt="Mountain landscape" />
                     <div class="photo-caption">
-                        <p class="font-inter">Above the clouds</p>
+                        <p class="font-inter">Honolulu, Hawaii</p>
                     </div>
                 </div>
-                
                 <!-- Photo 4 -->
                 <div class="photo-card" onclick="openModal('photo4')">
-                    <img src="/assets/gallery/peru_blue.jpeg" alt="Mountain valley" />
+                    <img src="/assets/gallery/monticello.jpeg" alt="Mountain landscape" />
                     <div class="photo-caption">
-                        <p class="font-inter">Valley reflections at dusk</p>
+                        <p class="font-inter">Monticello, Virginia</p>
                     </div>
                 </div>
-                
                 <!-- Photo 5 -->
                 <div class="photo-card" onclick="openModal('photo5')">
-                    <img src="/assets/gallery/peru_alpaca.jpeg" alt="Alpine view" />
+                    <img src="/assets/gallery/rotunda.jpeg" alt="Mountain landscape" />
                     <div class="photo-caption">
-                        <p class="font-inter">Alpine serenity</p>
-                    </div>
-                </div>
-                <!-- Photo 1 -->
-                <div class="photo-card" onclick="openModal('photo1')">
-                    <img src="/assets/gallery/cuzco.jpeg" alt="Mountain landscape" />
-                    <div class="photo-caption">
-                        <p class="font-inter">Morning light over the peaks</p>
+                        <p class="font-inter">Charlottesville, Virginia</p>
                     </div>
                 </div>
                 <!-- Photo 6 -->
                 <div class="photo-card" onclick="openModal('photo6')">
+                    <img src="/assets/gallery/morven_house.jpeg" alt="Mountain landscape" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Charlottesville, Virginia</p>
+                    </div>
+                </div>
+                <!-- Photo 8 -->
+                <div class="photo-card" onclick="openModal('photo8')">
+                    <img src="/assets/gallery/bachelor_gs.jpeg" alt="Mountain landscape" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Mt. Bachelor, Oregon</p>
+                    </div>
+                </div>
+                <!-- Photo 9 -->
+                <div class="photo-card" onclick="openModal('photo9')">
+                    <img src="/assets/gallery/snow.jpeg" alt="Mountain landscape" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Mt. Bachelor, Oregon</p>
+                    </div>
+                </div>
+                <!-- Photo 10 -->
+                <div class="photo-card" onclick="openModal('photo10')">
+                    <img src="/assets/gallery/bachelor.jpeg" alt="Mountain landscape" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Mt. Bachelor, Oregon</p>
+                    </div>
+                </div>
+                <!-- Photo 11 -->
+                <div class="photo-card" onclick="openModal('photo11')">
+                    <img src="/assets/gallery/humpback.jpeg" alt="Mountain landscape" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Humpback Rock, Virginia</p>
+                    </div>
+                </div>
+                <!-- Photo 12 -->
+                <div class="photo-card" onclick="openModal('photo12')">
+                    <img src="/assets/gallery/new_river.jpeg" alt="Mountain landscape" />
+                    <div class="photo-caption">
+                        <p class="font-inter">New River Gorge, West Virginia</p>
+                    </div>
+                </div>
+                <!-- Photo 13 -->
+                <div class="photo-card" onclick="openModal('photo13')">
+                    <img src="/assets/gallery/eiffel.jpeg" alt="Eiffel Tower" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Paris, France</p>
+                    </div>
+                </div>
+                <!-- Photo 14 -->
+                <div class="photo-card" onclick="openModal('photo14')">
+                    <img src="/assets/gallery/stuttgart_library.jpeg" alt="Mountain landscape" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Stuttgart, Germany</p>
+                    </div>
+                </div>
+                <!-- Photo 16 -->
+                <div class="photo-card" onclick="openModal('photo16')">
+                    <img src="/assets/gallery/stuttgart_crevice.jpeg" alt="Mountain landscape" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Mittelberg, Austria</p>
+                    </div>
+                </div>
+                <!-- Photo 17 -->
+                <div class="photo-card" onclick="openModal('photo17')">
+                    <img src="/assets/gallery/stuttgart_austria.jpeg" alt="Mountain landscape" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Mittelberg, Austria</p>
+                    </div>
+                </div>
+                <!-- Photo 18 -->
+                <div class="photo-card" onclick="openModal('photo18')">
+                    <img src="/assets/gallery/senna.jpeg" alt="Mountain landscape" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Stuttgart, Germany</p>
+                    </div>
+                </div>
+                <!-- Photo 20 -->
+                <div class="photo-card" onclick="openModal('photo20')">
+                    <img src="/assets/gallery/louvre_statue.jpeg" alt="Mountain landscape" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Paris, France</p>
+                    </div>
+                </div>
+                <!-- Photo 21 -->
+                <div class="photo-card" onclick="openModal('photo21')">
+                    <img src="/assets/gallery/paris.jpeg" alt="Mountain landscape" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Paris, France</p>
+                    </div>
+                </div>
+                <!-- Photo 24 -->
+                <div class="photo-card" onclick="openModal('photo24')">
+                    <img src="/assets/gallery/mammoth.jpeg" alt="Mountain landscape" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Mammoth, California</p>
+                    </div>
+                </div>
+                <!-- Photo 25 -->
+                <div class="photo-card" onclick="openModal('photo25')">
+                    <img src="/assets/gallery/beech.jpeg" alt="Mountain landscape" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Beech, North Carolina</p>
+                    </div>
+                </div>
+                <!-- Photo 26 -->
+                <div class="photo-card" onclick="openModal('photo26')">
+                    <img src="/assets/gallery/yak.jpeg" alt="Mountain landscape" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Bozeman, Montana</p>
+                    </div>
+                </div>
+                <!-- Photo 27 -->
+                <div class="photo-card" onclick="openModal('photo27')">
+                    <img src="/assets/gallery/sunday.jpeg" alt="Mountain landscape" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Sunday River, Maine</p>
+                    </div>
+                </div>
+                <!-- Photo 28 -->
+                <div class="photo-card" onclick="openModal('photo28')">
+                    <img src="/assets/gallery/barn.jpeg" alt="Mountain landscape" />
+                    <div class="photo-caption">
+                        <p class="font-inter">New Jersey</p>
+                    </div>
+                </div>
+                <!-- Photo 29 -->
+                <div class="photo-card" onclick="openModal('photo29')">
+                    <img src="/assets/gallery/peru_starbucks.jpeg" alt="Mountain landscape" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Yanatile, Peru</p>
+                    </div>
+                </div>
+                <!-- Photo 30 -->
+                <div class="photo-card" onclick="openModal('photo30')">
+                    <img src="/assets/gallery/peru_mountain.jpeg" alt="Mountain landscape" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Soray, Peru</p>
+                    </div>
+                </div>
+
+                <!-- Photo 31 -->
+                <div class="photo-card" onclick="openModal('photo31')">
+                    <img src="/assets/gallery/peru_path.jpeg" alt="Mountain sunset" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Soray, Peru</p>
+                    </div>
+                </div>
+
+                <!-- Photo 32 -->
+                <div class="photo-card" onclick="openModal('photo32')">
+                    <img src="/assets/gallery/peru_horses_me.jpeg" alt="Mountain peaks" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Cusco, Peru</p>
+                    </div>
+                </div>
+
+                <!-- Photo 34 -->
+                <div class="photo-card" onclick="openModal('photo34')">
+                    <img src="/assets/gallery/peru_alpaca.jpeg" alt="Alpine view" />
+                    <div class="photo-caption">
+                        <p class="font-inter">Cusco, Peru</p>
+                    </div>
+                </div>
+                <!-- Photo 35 -->
+                <div class="photo-card" onclick="openModal('photo36')">
                     <img src="/assets/gallery/smith.jpeg" alt="Mountain ridge" />
                     <div class="photo-caption">
-                        <p class="font-inter">Ridge line wandering</p>
+                        <p class="font-inter">Smith Mountain Lake, Virginia</p>
                     </div>
                 </div>
             </div>
@@ -534,31 +465,12 @@
         <!-- Books Section -->
         <section class="mb-20">
             <h2 class="font-spacegrotesk text-5xl font-black mb-8">books</h2>
-            
+
             <div class="books-container space-y-6">
                 <!-- Book 1 -->
                 <div class="book-card">
                     <div class="flex justify-between items-start mb-2">
-                        <h3 class="font-inter text-xl sm:text-2xl md:text-3xl font-semibold">The Pragmatic Programmer</h3>
-                        <div class="flex flex-col items-end gap-1">
-                            <div class="star-rating">
-                                <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
-                                <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
-                                <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
-                                <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
-                                <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
-                            </div>
-                            <p class="font-mono text-xs text-gray-400 dark:text-gray-500">January 2024</p>
-                        </div>
-                    </div>
-                    <p class="font-mono text-sm text-gray-500 dark:text-gray-400 mb-2">Andrew Hunt & David Thomas</p>
-                    <p class="text-base">Essential reading for any software developer. Timeless advice on crafting better code and becoming a more effective programmer.</p>
-                </div>
-
-                <!-- Book 2 -->
-                <div class="book-card">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="font-inter text-xl sm:text-2xl md:text-3xl font-semibold">Thinking, Fast and Slow</h3>
+                        <h3 class="font-inter text-xl sm:text-2xl md:text-3xl font-semibold">1984</h3>
                         <div class="flex flex-col items-end gap-1">
                             <div class="star-rating">
                                 <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
@@ -567,17 +479,93 @@
                                 <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
                                 <i data-lucide="star" class="star-empty w-5 h-5 fill-current"></i>
                             </div>
-                            <p class="font-mono text-xs text-gray-400 dark:text-gray-500">March 2024</p>
+                            <p class="font-mono text-xs text-gray-400 dark:text-gray-500">July 2025</p>
                         </div>
                     </div>
-                    <p class="font-mono text-sm text-gray-500 dark:text-gray-400 mb-2">Daniel Kahneman</p>
-                    <p class="text-base">Fascinating exploration of human decision-making and cognitive biases. Changed how I think about thinking.</p>
+                    <p class="font-mono text-sm text-gray-500 dark:text-gray-400 mb-2">George Orwell</p>
+                    <p class="text-base">my review</p>
+                </div>
+                <!-- Book 1 -->
+                <div class="book-card">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-inter text-xl sm:text-2xl md:text-3xl font-semibold">The Message</h3>
+                        <div class="flex flex-col items-end gap-1">
+                            <div class="star-rating">
+                                <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="star-empty w-5 h-5 fill-current"></i>
+                            </div>
+                            <p class="font-mono text-xs text-gray-400 dark:text-gray-500">March 2025</p>
+                        </div>
+                    </div>
+                    <p class="font-mono text-sm text-gray-500 dark:text-gray-400 mb-2">Ta-Nehisi Coates</p>
+                    <p class="text-base">my review</p>
+                </div>
+
+                <!-- Book 2 -->
+                <div class="book-card">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-inter text-xl sm:text-2xl md:text-3xl font-semibold">
+                            A Brief History of Everyone Who Ever Lived</h3>
+                        <div class="flex flex-col items-end gap-1">
+                            <div class="star-rating">
+                                <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="star-empty w-5 h-5 fill-current"></i>
+                            </div>
+                            <p class="font-mono text-xs text-gray-400 dark:text-gray-500">October 2024</p>
+                        </div>
+                    </div>
+                    <p class="font-mono text-sm text-gray-500 dark:text-gray-400 mb-2">Adam Rutherford</p>
+                    <p class="text-base">my review</p>
                 </div>
 
                 <!-- Book 3 -->
                 <div class="book-card">
                     <div class="flex justify-between items-start mb-2">
-                        <h3 class="font-inter text-xl sm:text-2xl md:text-3xl font-semibold">Dune</h3>
+                        <h3 class="font-inter text-xl sm:text-2xl md:text-3xl font-semibold">How to Hide an Empire</h3>
+                        <div class="flex flex-col items-end gap-1">
+                            <div class="star-rating">
+                                <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
+                            </div>
+                            <p class="font-mono text-xs text-gray-400 dark:text-gray-500">August 2024</p>
+                        </div>
+                    </div>
+                    <p class="font-mono text-sm text-gray-500 dark:text-gray-400 mb-2">Daniel Immerwahr</p>
+                    <p class="text-base">my review</p>
+                </div>
+
+                <!-- Book 4 -->
+                <div class="book-card">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-inter text-xl sm:text-2xl md:text-3xl font-semibold">Breath</h3>
+                        <div class="flex flex-col items-end gap-1">
+                            <div class="star-rating">
+                                <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="star-empty w-5 h-5 fill-current"></i>
+                            </div>
+                            <p class="font-mono text-xs text-gray-400 dark:text-gray-500">July 2024</p>
+                        </div>
+                    </div>
+                    <p class="font-mono text-sm text-gray-500 dark:text-gray-400 mb-2">James Nestor</p>
+                    <p class="text-base">my review</p>
+                </div>
+
+                <!-- Book 5 -->
+                <div class="book-card">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-inter text-xl sm:text-2xl md:text-3xl font-semibold">Poverty, By America</h3>
                         <div class="flex flex-col items-end gap-1">
                             <div class="star-rating">
                                 <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
@@ -589,46 +577,8 @@
                             <p class="font-mono text-xs text-gray-400 dark:text-gray-500">June 2024</p>
                         </div>
                     </div>
-                    <p class="font-mono text-sm text-gray-500 dark:text-gray-400 mb-2">Frank Herbert</p>
-                    <p class="text-base">Epic sci-fi masterpiece. Intricate world-building and complex themes that stay with you long after reading.</p>
-                </div>
-
-                <!-- Book 4 -->
-                <div class="book-card">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="font-inter text-xl sm:text-2xl md:text-3xl font-semibold">Clean Code</h3>
-                        <div class="flex flex-col items-end gap-1">
-                            <div class="star-rating">
-                                <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
-                                <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
-                                <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
-                                <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
-                                <i data-lucide="star" class="star-empty w-5 h-5 fill-current"></i>
-                            </div>
-                            <p class="font-mono text-xs text-gray-400 dark:text-gray-500">August 2024</p>
-                        </div>
-                    </div>
-                    <p class="font-mono text-sm text-gray-500 dark:text-gray-400 mb-2">Robert C. Martin</p>
-                    <p class="text-base">Great principles for writing maintainable code. Some examples feel dated but the core concepts are invaluable.</p>
-                </div>
-
-                <!-- Book 5 -->
-                <div class="book-card">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="font-inter text-xl sm:text-2xl md:text-3xl font-semibold">Atomic Habits</h3>
-                        <div class="flex flex-col items-end gap-1">
-                            <div class="star-rating">
-                                <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
-                                <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
-                                <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
-                                <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
-                                <i data-lucide="star" class="star w-5 h-5 fill-current"></i>
-                            </div>
-                            <p class="font-mono text-xs text-gray-400 dark:text-gray-500">October 2024</p>
-                        </div>
-                    </div>
-                    <p class="font-mono text-sm text-gray-500 dark:text-gray-400 mb-2">James Clear</p>
-                    <p class="text-base">Practical framework for building good habits and breaking bad ones. Highly actionable and well-researched.</p>
+                    <p class="font-mono text-sm text-gray-500 dark:text-gray-400 mb-2">Matthew Desmond</p>
+                    <p class="text-base">my review</p>
                 </div>
             </div>
         </section>
@@ -678,7 +628,7 @@
             const modalImage = document.getElementById('modalImage');
             const photoCard = event.target.closest('.photo-card');
             const img = photoCard.querySelector('img');
-            
+
             modalImage.src = img.src;
             modal.classList.add('active');
         }
