@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" class="light">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thomas Johnson - Experience</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏔️</text></svg>">
+    <title>Thomas Johnson - Resume</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏔️</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -72,6 +73,33 @@
             background-color: #1f2937;
             border-color: #374151;
         }
+
+/* neutralize any leftover per-icon top margins (override tailwind mt-1) */
+li.flex > i[data-lucide],
+li.flex > svg[data-lucide] {
+  margin-top: 0 !important;
+}
+
+/* size + prevent shrinking on the generated svg element (lucide replaces <i> with <svg>) */
+li.flex > svg[data-lucide] {
+  width: 1.75rem !important;     /* same as w-7 */
+  height: 1.75rem !important;    /* same as h-7 */
+  flex-shrink: 0 !important;     /* don't shrink when text wraps */
+  display: inline-block !important;
+  vertical-align: top;           /* avoids baseline scaling differences */
+  align-self: flex-start;        /* keeps icon at top of the flex row */
+  box-sizing: content-box;
+  stroke-width: 2 !important;    /* consistent stroke */
+}
+
+/* ensure the <li> row puts the icon at the top when text wraps */
+li.flex {
+  align-items: flex-start; /* icon aligns with first text line for multi-line items */
+}
+
+/* if you want the icon vertically centered for single-line items, you can tweak with a small translate */
+li.flex > svg[data-lucide] { transform: translateY(0); }
+
     </style>
 </head>
 
@@ -83,7 +111,7 @@
             <a href="index.html" class="text-base sm:text-xl md:text-4xl font-bold">🏔️</a>
             <div class="flex gap-6 items-center text-base sm:text-lg">
                 <a href="index.html" class="nav-link">About</a>
-                <a href="experience.html" class="nav-link">Experience</a>
+                <a href="experience.html" class="nav-link">Resume</a>
                 <a href="projects.html" class="nav-link">Projects</a>
                 <button id="themeToggle" class="w-6 h-6 flex items-center justify-center">
                     <i data-lucide="moon" class="dark:hidden"></i>
@@ -96,50 +124,92 @@
     <div class="max-w-6xl mx-auto px-6">
         <!-- Work Section -->
         <section class="mb-20 mt-20">
-            <h2 class="font-spacegrotesk text-5xl font-black mb-8">work</h2>
+            <!-- Education -->
+            <section class="mb-20 mt-20">
+                <h2 class="font-spacegrotesk text-5xl font-black mb-8">education</h2>
+                <div class="mb-10 flex flex-col items-start gap-10">
+                    <div>
+                        <h3 class="font-mono text-base sm:text-lg md:text-xl text-gray-500 dark:text-gray-400">
+                            UNIVERSITY OF VIRGINIA</h3>
+                        <p class="font-inter text-lg sm:text-2xl md:text-3xl lg:text-4xl mb-2">B.S. Computer Engineering
+                        </p>
+                        <h3 class="font-mono text-base sm:text-md md:text-lg text-gray-500 dark:text-gray-400">
+                            Engineering Business Minor, 3.5 GPA, Graduated with Distinction</h3>
+                        <p class="font-spacegrotesk text-base text-gray-500 dark:text-gray-400 mb-2">Charlottesville, VA
+                        </p>
 
+                    </div>
+
+                    <div>
+                        <h3 class="font-mono text-base sm:text-lg md:text-xl text-gray-500 dark:text-gray-400">DELBARTON
+                            SCHOOL</h3>
+                        <p class="font-inter text-lg sm:text-2xl md:text-3xl lg:text-4xl mb-2"></p>
+                        <h3 class="font-mono text-base sm:text-md md:text-lg text-gray-500 dark:text-gray-400">
+                            Headmaster's List, Highest Honors, First Team All-State Skiing</h3>
+                        <p class="font-spacegrotesk text-base text-gray-500 dark:text-gray-400 mb-2">Morristown, NJ</p>
+
+                    </div>
+
+                </div>
+            </section>
+            <h2 class="font-spacegrotesk text-5xl font-black mb-8">work</h2>
             <!-- Work Experience -->
-            <div class="mb-10 flex flex-col items-start gap-4">
+            <div class="mb-10 flex flex-col items-start gap-10">
                 <div>
-                    <h3 class="font-mono text-base sm:text-lg md:text-xl text-gray-500 dark:text-gray-400">INFOSYS</h3>
-                    <p class="font-inter text-lg sm:text-2xl md:text-3xl lg:text-4xl mb-2">Technology Analyst</p>
-                    <p class="font-spacegrotesk text-base text-gray-500 dark:text-gray-400 mb-2">Trivandrum, Kerala</p>
+                    <h3 class="font-mono text-base sm:text-lg md:text-xl text-gray-500 dark:text-gray-400">UNIVERSITY OF
+                        VIRGINIA</h3>
+                    <p class="font-inter text-lg sm:text-2xl md:text-3xl lg:text-4xl mb-2">Teaching Assistant</p>
+                    <p class="font-spacegrotesk text-base text-gray-500 dark:text-gray-400 mb-2">Charlottesville, VA</p>
                     <ul class="font-inter space-y-3 text-base sm:text-lg md:text-xl leading-relaxed">
                         <li class="flex items-start gap-2">
                             <i data-lucide="chevron-right" class="w-7 h-7 text-blue-500 dark:text-blue-400 mt-1"></i>
-                            <span>Proven expertise in RDKB platform, developing and maintaining middleware CCSP
-                                components for RDK-B platform using Embedded C in Linux environment.</span>
+                            <span>Assisted during in class workshops of at least 50 students and led office hours outside of class</span>
                         </li>
                         <li class="flex items-start gap-2">
                             <i data-lucide="chevron-right" class="w-7 h-7 text-blue-500 dark:text-blue-400 mt-1"></i>
-                            <span>Worked on WebPA/WebConfig client development to enable secure and efficient
-                                cloud-based configuration management for RDK-B devices.</span>
+                            <span>Graded assignments and collaborated with professor to improve class' efficiency and effectiveness</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-mono text-base sm:text-lg md:text-xl text-gray-500 dark:text-gray-400">JOHNSON &
+                        JOHNSON</h3>
+                    <p class="font-inter text-lg sm:text-2xl md:text-3xl lg:text-4xl mb-2">Intern</p>
+                    <p class="font-spacegrotesk text-base text-gray-500 dark:text-gray-400 mb-2">Raritan, NJ</p>
+                    <ul class="font-inter space-y-3 text-base sm:text-lg md:text-xl leading-relaxed">
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="chevron-right" class="w-7 h-7 text-blue-500 dark:text-blue-400"></i>
+                            <span>Optimized ECM's digital database for auditors to locate files through intra document search</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="chevron-right" class="w-7 h-7 text-blue-500 dark:text-blue-400"></i>
+                            <span>Built automation solutions, including a web app that automatically processed the
+                                change request system for an ECM database that the team now uses as a template</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="chevron-right" class="w-7 h-7 text-blue-500 dark:text-blue-400"></i>
+                            <span>Developed a web portal with integrated automation and analytics through a user experience 
+                                focused strategy. Researched and developed a framework for finance training for global employees</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-mono text-base sm:text-lg md:text-xl text-gray-500 dark:text-gray-400">UNIVERSITY OF
+                        VIRGINIA</h3>
+                    <p class="font-inter text-lg sm:text-2xl md:text-3xl lg:text-4xl mb-2">Undergraduate Research
+                        Assistant</p>
+                    <p class="font-spacegrotesk text-base text-gray-500 dark:text-gray-400 mb-2">Charlottesville, VA</p>
+                    <ul class="font-inter space-y-3 text-base sm:text-lg md:text-xl leading-relaxed">
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="chevron-right" class="w-7 h-7 text-blue-500 dark:text-blue-400 mt-1"></i>
+                            <span>Tested RFID antennas and sensors to harvest energy for low maintenance sensors</span>
                         </li>
                         <li class="flex items-start gap-2">
                             <i data-lucide="chevron-right" class="w-7 h-7 text-blue-500 dark:text-blue-400 mt-1"></i>
-                            <span>Strong analytical skills in troubleshooting complex issues - analyzing JIRA tickets,
-                                debugging root cause, and delivering high-quality solutions.</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <i data-lucide="chevron-right" class="w-7 h-7 text-blue-500 dark:text-blue-400 mt-1"></i>
-                            <span>Maintained and enhanced core RDK-B components including Utopia, CcspPSM, and
-                                CcspLMLite by analyzing legacy code and implementing feature updates aligned with
-                                current coding standards.</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <i data-lucide="chevron-right" class="w-7 h-7 text-blue-500 dark:text-blue-400 mt-1"></i>
-                            <span>Created Yocto layers (meta-*) and wrote bitbake recipe (.bb, .bbappend) files for
-                                building packages in RDK-B Yocto based build system.</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <i data-lucide="chevron-right" class="w-7 h-7 text-blue-500 dark:text-blue-400 mt-1"></i>
-                            <span>Solid understanding of networking protocols such as DHCP, TCP, UDP, NAT, and key
-                                networking concepts relevant to broadband devices.</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <i data-lucide="chevron-right" class="w-7 h-7 text-blue-500 dark:text-blue-400 mt-1"></i>
-                            <span>Strongly skilled in Linux shell scripting, command-line utilities and custom script
-                                development.</span>
+                            <span>Employed test-driven development for different components and circuit board
+                                layouts</span>
                         </li>
                     </ul>
                 </div>
@@ -152,27 +222,27 @@
 
             <!-- Responsive icons -->
             <div class="flex flex-wrap gap-4 items-center mb-6">
-                <img src="assets/c.svg" alt="C"
+                <img src="assets/skills_icons/c.svg" alt="C"
                     class="h-14 w-auto transition ease-in-out duration-150 hover:scale-125" />
-                <img src="assets/cpp.svg" alt="C++"
+                <img src="assets/skills_icons/cpp.svg" alt="C++"
                     class="h-14 w-auto transition ease-in-out duration-150 hover:scale-125" />
-                <img src="assets/bash.svg" alt="Bash"
+                <img src="assets/skills_icons/bash.svg" alt="Bash"
                     class="h-14 w-auto transition ease-in-out duration-150 hover:scale-125" />
-                <img src="assets/linux.svg" alt="Linux"
+                <img src="assets/skills_icons/linux.svg" alt="Linux"
                     class="h-14 w-auto transition ease-in-out duration-150 hover:scale-125" />
-                <img src="assets/python.svg" alt="Python"
+                <img src="assets/skills_icons/python.svg" alt="Python"
                     class="h-14 w-auto transition ease-in-out duration-150 hover:scale-125" />
-                <img src="assets/java.svg" alt="Java"
+                <img src="assets/skills_icons/java.svg" alt="Java"
                     class="h-14 w-auto transition ease-in-out duration-150 hover:scale-125" />
-                <img src="assets/github.svg" alt="GitHub"
+                <img src="assets/skills_icons/github.svg" alt="GitHub"
                     class="h-14 w-auto transition ease-in-out duration-150 hover:scale-125" />
-                <img src="assets/verilog.svg" alt="Verilog"
+                <img src="assets/skills_icons/verilog.svg" alt="Verilog"
                     class="h-14 w-auto transition ease-in-out duration-150 hover:scale-125" />
-                <img src="assets/rust.svg" alt="Rust"
+                <img src="assets/skills_icons/rust.svg" alt="Rust"
                     class="h-14 w-auto transition ease-in-out duration-150 hover:scale-125" />
-                <img src="assets/matlab.svg" alt="Matlab"
+                <img src="assets/skills_icons/matlab.svg" alt="Matlab"
                     class="h-14 w-auto transition ease-in-out duration-150 hover:scale-125" />
-                <img src="assets/git.svg" alt="Git"
+                <img src="assets/skills_icons/git.svg" alt="Git"
                     class="h-14 w-auto transition ease-in-out duration-150 hover:scale-125" />
             </div>
 
@@ -211,8 +281,7 @@
         <i data-lucide="arrow-up-to-line" class="w-5 h-5"></i>
     </button>
 
-    <footer
-        class="border-t border-gray-300 dark:border-gray-700 text-center text-sm py-5 mt-10">
+    <footer class="border-t border-gray-300 dark:border-gray-700 text-center text-sm py-5 mt-10">
         <span style="color: #374151" class="dark:text-gray-200">© 2025 by Thomas Johnson</span>
     </footer>
 
