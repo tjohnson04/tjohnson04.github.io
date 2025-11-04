@@ -63,3 +63,15 @@ body {
     color: black;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+/* Make photo-cards taller inside the books section */
+.books-section .photo-card {
+  width: 200px;     /* or 180px if you want thinner books */
+  height: 300px;    /* taller height for book proportions */
+}
+
+.books-section .photo-card img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
